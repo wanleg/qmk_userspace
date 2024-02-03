@@ -1,6 +1,42 @@
-
 #include QMK_KEYBOARD_H
 #include "wanleg.h"
+
+//Combo section start
+//list combos
+enum combo_events {
+  PINKY_ENTER,
+  //EM_EMAIL,
+  COMBO_LENGTH //this is a required line for the COMBO_COUNT delete
+};
+uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define in config.h and use this instead!
+//create keycombo name mappings
+const uint16_t PROGMEM twoKeyEnter[] = {SFT_T(KC_SPC), CTL_T(KC_BSPC), COMBO_END};
+//const uint16_t PROGMEM email_combo[] = {KC_G, KC_H, COMBO_END};
+
+combo_t key_combos[] = {
+    [PINKY_ENTER] = COMBO_ACTION(twoKeyEnter),
+    //COMBO(twoKeyEnter, KC_SPC), //can define simple actions here
+    //[EM_EMAIL] = COMBO_ACTION(email_combo), //complex actions can be described below
+};
+/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+/*
+    case EM_EMAIL:
+      if (pressed) {
+        SEND_STRING("john.doe@example.com");
+      }
+      break;
+*/
+    case PINKY_ENTER:
+      if (pressed) {
+        tap_code16(KC_ENT);
+      }
+      break;
+  }
+}
+//Combo section end
 
 /* no numrow layout
 #define LAYOUT_iris_base( \
@@ -84,7 +120,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______________SUBTER_Row__1_______________,
     ______________ETCETERA_Row__0______________,
     ______________ETCETERA_Row__1______________,
-    _______, TD(TD_SFT_CAPS),KC_CAPS, _______,_______, _______, _______, _______,  LALT(LCTL(KC_DEL)),	KC_WH_L, KC_WH_R, KC_LALT, KC_DEL, _______,
+    //_______, TD(TD_SFT_CAPS),KC_CAPS, _______,_______, _______, _______, _______,  LALT(LCTL(KC_DEL)),	KC_WH_L, KC_WH_R, KC_LALT, KC_DEL, _______,
+    _______, KC_CAPS, KC_CAPS, _______,_______, _______, _______, _______,  LALT(LCTL(KC_DEL)),	KC_WH_L, KC_WH_R, KC_LALT, KC_DEL, _______,
 												_______, _______, _______,		LALT(LCTL(KC_DEL)), _______, _______
   )
   
