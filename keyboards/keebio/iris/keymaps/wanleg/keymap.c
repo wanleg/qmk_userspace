@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ______________ETCETERA_Row__0______________,
     ______________ETCETERA_Row__1______________,
     //_______, TD(TD_SFT_CAPS),KC_CAPS, _______,_______, _______, _______, _______,  LALT(LCTL(KC_DEL)),	KC_WH_L, KC_WH_R, KC_LALT, KC_DEL, _______,
-    _______, KC_CAPS, KC_CAPS, _______,_______, _______, _______, _______,  LALT(LCTL(KC_DEL)),	KC_WH_L, KC_WH_R, KC_LALT, KC_DEL, _______,
+    _______, KC_LSFT, KC_CAPS, _______,_______, _______, _______, _______,  LALT(LCTL(KC_DEL)),	KC_WH_L, KC_WH_R, KC_LALT, KC_DEL, _______,
 												_______, _______, _______,		LALT(LCTL(KC_DEL)), _______, _______
   )
   
