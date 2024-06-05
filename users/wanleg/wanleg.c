@@ -142,12 +142,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
     if (record -> event.pressed) {
       if (mouse_jiggle_mode) {
         mouse_jiggle_mode = false;
+        //#if defined(RGBLIGHT_ENABLE)
+        #if defined(RGB_MATRIX_ENABLE)
         rgb_matrix_mode_noeeprom(RGB_MATRIX_CYCLE_UP_DOWN);
+	#endif
       } else {
         mouse_jiggle_mode = true;
+        //#if defined(RGBLIGHT_ENABLE)
+        #if defined(RGB_MATRIX_ENABLE)
         rgb_matrix_enable_noeeprom();
         rgb_matrix_mode_noeeprom(RGB_MATRIX_BAND_PINWHEEL_VAL);
         rgb_matrix_sethsv_noeeprom(HSV_GREEN);
+	#endif
       }
       SEND_STRING(SS_DELAY(100)); // uncomment if it switches too fast before the button debounces
     } else {}
