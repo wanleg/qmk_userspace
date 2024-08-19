@@ -47,7 +47,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
      K01,	K02,	K03,	K04,	K05,	K06,	K07,	K08,	K09,	K0A, \
      K11,	K12,	K13,	K14,	K15,	K16,	K17,	K18,	K19,	K1A, \
      K21,	K22,	K23,	K24,	K25,	K26,	K27,	K28,	K29,	K2A, \
-	XXXXXXX,	KC_LCTL, NUMBER, ETCETERA,	KC_MUTE, XXXXXXX,	KC_SPC, DIRECTION, KC_RGUI, XXXXXXX \
+	KC_NO,	KC_LCTL, NUMBER, ETCETERA,	KC_MUTE, KC_NO,	KC_SPC, DIRECTION, KC_RGUI, KC_NO \
   )
 #define LAYOUT_waterfowl_base_wrapper(...)       LAYOUT_waterfowl_base(__VA_ARGS__)
 
