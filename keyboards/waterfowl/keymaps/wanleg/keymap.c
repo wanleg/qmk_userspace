@@ -90,6 +90,6 @@ KC_LCTL, NUMBER, ETCETERA,	KC_SPC, DIRECTION, KC_RGUI
   _______________Gherkin_ETC_0_______________,
   _______________Gherkin_ETC_1_______________,
   _______________Gherkin_ETC_2_______________,
-  _______,	_______, NUMBER, ETCETERA,	 _______,  _______, 	LALT(LCTL(KC_DEL)), DIRECTION, KC_RGUI,			_______	
+  KC_PWR,	_______, NUMBER, ETCETERA,	 _______,  _______, 	LALT(LCTL(KC_DEL)), DIRECTION, KC_RGUI,			_______	
 ),
 };
