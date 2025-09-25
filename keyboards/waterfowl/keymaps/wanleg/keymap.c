@@ -5,16 +5,19 @@
 //list combos
 enum combo_events {
   PINKY_ENTER,
+  THUMB_ENTER,
   //EM_EMAIL,
   COMBO_LENGTH //this is a required line for the COMBO_COUNT delete
 };
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define in config.h and use this instead!
 //create keycombo name mappings
 const uint16_t PROGMEM twoKeyEnter[] = {SFT_T(KC_SPC), CTL_T(KC_BSPC), COMBO_END};
+const uint16_t PROGMEM twoKeyEnter2[] = {KC_SPC, MO(DIR), COMBO_END};
 //const uint16_t PROGMEM email_combo[] = {KC_G, KC_H, COMBO_END};
 
 combo_t key_combos[] = {
     [PINKY_ENTER] = COMBO_ACTION(twoKeyEnter),
+    [THUMB_ENTER] = COMBO_ACTION(twoKeyEnter2),
     //COMBO(twoKeyEnter, KC_SPC), //can define simple actions here
     //[EM_EMAIL] = COMBO_ACTION(email_combo), //complex actions can be described below
 };
@@ -30,6 +33,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       break;
 */
     case PINKY_ENTER:
+      if (pressed) {
+        tap_code16(KC_ENT);
+      }
+      break;
+    case THUMB_ENTER:
       if (pressed) {
         tap_code16(KC_ENT);
       }

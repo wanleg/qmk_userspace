@@ -176,10 +176,10 @@ enum {
  * | Sft//Cp| CAPS   |        |        |        | C-A-D  | mScrL  | mScrR  | ALT    |  DEL   |
  * '-----------------------------------------------------------------------------------------'
  */
-#define _______________Gherkin_ETC_0_______________			KC_GRV,  KC_MS_U, _______, KC_ESC, QK_BOOT, KC_RSFT, KC_WH_D, KC_WH_U, _______, KC_BSLS
-#define _______________Gherkin_ETC_1_______________			KC_MS_L, KC_MS_D, KC_MS_R, _______, KC_LSFT, KC_BTN3, KC_BTN1, KC_BTN2, KC_SCLN, KC_QUOT
-//#define _______________Gherkin_ETC_2_______________			TD(TD_SFT_CAPS), KC_CAPS, _______, _______, _______, LALT(LCTL(KC_DEL)), KC_WH_L, KC_WH_R, KC_LALT, KC_DEL
-#define _______________Gherkin_ETC_2_______________			KC_LSFT, KC_CAPS, _______, _______, _______, LALT(LCTL(KC_DEL)), KC_WH_L, KC_WH_R, KC_LALT, KC_DEL
+#define _______________Gherkin_ETC_0_______________			KC_GRV,  MS_UP, _______, KC_ESC, QK_BOOT, KC_RSFT, MS_WHLD, MS_WHLU, _______, KC_BSLS
+#define _______________Gherkin_ETC_1_______________			MS_LEFT, MS_DOWN, MS_RGHT, _______, KC_LSFT, MS_BTN3, MS_BTN1, MS_BTN2, KC_SCLN, KC_QUOT
+//#define _______________Gherkin_ETC_2_______________			TD(TD_SFT_CAPS), KC_CAPS, _______, _______, _______, LALT(LCTL(KC_DEL)), MS_WHLL, MS_WHLR, KC_LALT, KC_DEL
+#define _______________Gherkin_ETC_2_______________			KC_LSFT, KC_CAPS, _______, _______, _______, LALT(LCTL(KC_DEL)), MS_WHLL, MS_WHLR, KC_LALT, KC_DEL
 
 /* Gherkin-Like
  * .-----------------------------------------------------------------------------------------------------------.
