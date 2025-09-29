@@ -12,7 +12,7 @@ enum combo_events {
 uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define in config.h and use this instead!
 //create keycombo name mappings
 const uint16_t PROGMEM twoKeyEnter[] = {SFT_T(KC_SPC), CTL_T(KC_BSPC), COMBO_END};
-const uint16_t PROGMEM twoKeyEnter2[] = {KC_SPC, MO(DIR), COMBO_END};
+const uint16_t PROGMEM twoKeyEnter2[] = {KC_SPC, DIRECTION, COMBO_END};
 //const uint16_t PROGMEM email_combo[] = {KC_G, KC_H, COMBO_END};
 
 combo_t key_combos[] = {
