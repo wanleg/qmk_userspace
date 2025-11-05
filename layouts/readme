@@ -1,0 +1,2 @@
+for some reason, qmk does not compile properly if there are a lot of layouts sitting in the layouts folder.
+in order to compile properly, move the target layout from "stash" to "layouts", then compile
