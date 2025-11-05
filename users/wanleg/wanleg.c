@@ -144,7 +144,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
         mouse_jiggle_mode = false;
         //#if defined(RGBLIGHT_ENABLE)
         #if defined(RGB_MATRIX_ENABLE)
-        rgb_matrix_mode_noeeprom(RGB_MATRIX_CYCLE_UP_DOWN);
+        rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
 	#endif
       } else {
         mouse_jiggle_mode = true;
@@ -152,7 +152,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
         #if defined(RGB_MATRIX_ENABLE)
         rgb_matrix_enable_noeeprom();
         //rgb_matrix_mode_noeeprom(RGB_MATRIX_BAND_PINWHEEL_VAL);
-        rgb_matrix_mode_noeeprom(RGB_MATRIX_CYCLE_PINWHEEL);
+        rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
         rgb_matrix_sethsv_noeeprom(HSV_GREEN);
 	#endif
       }
