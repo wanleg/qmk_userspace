@@ -1,46 +1,4 @@
-#include QMK_KEYBOARD_H
 #include "wanleg.h"
-
-//Combo section start
-//list combos
-enum combo_events {
-  PINKY_ENTER,
-  THUMB_ETC,
-  //EM_EMAIL,
-  COMBO_LENGTH //this is a required line for the COMBO_COUNT delete
-};
-uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define in config.h and use this instead!
-//create keycombo name mappings
-const uint16_t PROGMEM twoKeyEnter[] = {SFT_T(KC_SPC), RCTL_T(KC_BSPC), COMBO_END};
-const uint16_t PROGMEM twoKeyEtc[] = {NUMBER, LT(ETC, KC_V),  COMBO_END};
-//const uint16_t PROGMEM email_combo[] = {KC_G, KC_H, COMBO_END};
-
-combo_t key_combos[] = {
-    [PINKY_ENTER] = COMBO_ACTION(twoKeyEnter),
-    //[THUMB_ETC] = COMBO_ACTION(twoKeyEtc),
-    [THUMB_ETC] = COMBO(twoKeyEtc, MO(ETC)),
-    //COMBO(twoKeyEnter, KC_SPC), //can define simple actions here
-    //[EM_EMAIL] = COMBO_ACTION(email_combo), //complex actions can be described below
-};
-/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-  switch(combo_index) {
-/*
-    case EM_EMAIL:
-      if (pressed) {
-        SEND_STRING("john.doe@example.com");
-      }
-      break;
-*/
-    case PINKY_ENTER:
-      if (pressed) {
-        tap_code16(KC_ENT);
-      }
-      break;
-  }
-}
-//Combo section end
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_GK] = LAYOUT_wrapper(
@@ -73,8 +31,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_FN] = LAYOUT_wrapper(
         _______, _______, _______, _______, _______, _______,  _______, _______, _______, _______, _______, _______,
-        _______, RGB_M_B, RGB_VAD, RGB_VAI, RGB_TOG, RGB_MOD,  _______, _______, _______, _______, _______, _______, 
-        _______, RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, _______,  _______, _______, _______, _______, _______, _______, 
+        _______, RGB_M_B, UG_VALD, UG_VALU, UG_TOGG, UG_NEXT,  _______, _______, _______, _______, _______, _______, 
+        _______, UG_HUED, UG_HUEU, UG_SATD, UG_SATU, _______,  _______, _______, _______, _______, _______, _______, 
         _______, _______, _______,          _______,         _______,                    _______, _______, _______, _______
     )
 };

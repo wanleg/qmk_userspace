@@ -1,4 +1,3 @@
-#include QMK_KEYBOARD_H
 #include "wanleg.h" //needed for mouseJiggler keycode definition
 
 // OLED animation

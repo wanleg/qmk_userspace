@@ -1,7 +1,6 @@
 // Copyright 2023 Audite Marlow (@auditemarlow)
 // SPDX-License-Identifier: GPL-3.0
 
-#include QMK_KEYBOARD_H
 #include "wanleg.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

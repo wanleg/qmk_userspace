@@ -1,5 +1,5 @@
 #pragma once
-#include "quantum.h"
+#include QMK_KEYBOARD_H
 
 // Define layer names and order
 #if defined(KEYBOARD_40percentclub_gherkin) || defined(KEYBOARD_kbdfans_kbd6x)
@@ -81,17 +81,7 @@ enum userspace_custom_keycodes {
 
 //Tap Dance Declarations (list of my tap dance configurations)
 #ifdef TAP_DANCE_ENABLE
-enum {
-  TD_SFT_CAPS = 0
-  , TD_Q_ESC
-  , CAD_TD
-  , RST_TAP_DANCE
-  , LYR_TAP_DANCE
-  , LYR50_TAP_DANCE
-  , LYR75_TAP_DANCE
-  , BSW_TAP_DANCE
-  , SS1_TAP_DANCE
-};
+ #include "tapdances.h"
 #endif
 
 // Since our quirky block definitions are basically a list of comma separated

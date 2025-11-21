@@ -1,11 +1,15 @@
 SRC += wanleg.c
 
-ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
-SRC += tapdances.c
-endif
-
 MOUSEKEY_ENABLE = yes
 EXTRAKEY_ENABLE = yes #Audio control and System control
+
+ifeq ($(strip $(TAP_DANCE_ENABLE)), yes)
+    INTROSPECTION_KEYMAP_C = customizations.c
+endif
+
+ifeq ($(strip $(COMBO_ENABLE)), yes)
+    INTROSPECTION_KEYMAP_C = customizations.c
+endif
 
 #If using a ProMicro and it has the QMK DFU bootloader instead of Caterina,
 #run "make <keyboard>:<keymap> dfu=qmk" when compiling to ensure it is flagged properly after being flashed

@@ -1,5 +1,6 @@
-//Tap Dance Settings
 #include "wanleg.h"
+#include "tapdances.h"
+//Tap Dance Settings
 
 //audio settings for one of the tap dances below
 #ifdef AUDIO_ENABLE

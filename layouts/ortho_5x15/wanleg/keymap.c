@@ -1,45 +1,5 @@
-#include QMK_KEYBOARD_H
 //quick and dirty wide spread setup
 #include "wanleg.h"
-
-//Combo section start
-//list combos
-enum combo_events {
-  PINKY_ENTER,
-  //EM_EMAIL,
-  COMBO_LENGTH //this is a required line for the COMBO_COUNT delete
-};
-uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define in config.h and use this instead!
-//create keycombo name mappings
-const uint16_t PROGMEM twoKeyEnter[] = {SFT_T(KC_SPC), CTL_T(KC_BSPC), COMBO_END};
-//const uint16_t PROGMEM email_combo[] = {KC_G, KC_H, COMBO_END};
-
-combo_t key_combos[] = {
-    [PINKY_ENTER] = COMBO_ACTION(twoKeyEnter),
-    //COMBO(twoKeyEnter, KC_SPC), //can define simple actions here
-    //[EM_EMAIL] = COMBO_ACTION(email_combo), //complex actions can be described below
-};
-/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-  switch(combo_index) {
-/*
-    case EM_EMAIL:
-      if (pressed) {
-        SEND_STRING("john.doe@example.com");
-      }
-      break;
-*/
-    case PINKY_ENTER:
-      if (pressed) {
-        tap_code16(KC_ENT);
-      }
-      break;
-  }
-}
-//Combo section end 
-
-//#define LAYOUT_ortho_5x15_base( 
 
 #define LAYOUT_ortho_5x15_base( \
     K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, \
