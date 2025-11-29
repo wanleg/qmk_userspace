@@ -18,7 +18,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______________Gherkin_Row_0_______________, 
   _______________Gherkin_Row_1_______________, 
 //  SFT_T(KC_Z), 	KC_X, 	KC_C, 	LT(NUM,KC_V),	LT(ETC,KC_B),  KC_N, 	LT(DIR,KC_M), 	GUI_T(KC_COMM),	ALT_T(KC_DOT),	CTL_T(KC_BSPC)  
-  SFT_T(KC_Z), 	KC_X, 	KC_C, 	KC_V,	LT(ETC,KC_B),  KC_N, 	KC_M, 	KC_COMM,	ALT_T(KC_DOT),	CTL_T(KC_BSPC)  
+  SFT_T(KC_Z), 	KC_X, 	KC_C, 	KC_V,	LT(ETC,KC_B),  KC_N, 	KC_M, 	KC_COMM,	ALT_T(KC_DOT),	RCTL_T(KC_BSPC)  
 //  KC_Z,    		KC_X,   KC_C,   KC_V,  		    KC_B,     	   KC_N,    KC_M,    		KC_COMM, 		KC_DOT,  		KC_SLSH
 ),
 
