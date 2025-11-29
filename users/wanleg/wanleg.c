@@ -11,7 +11,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
       set_single_persistent_default_layer(_QW);
       #if defined(RGBLIGHT_ENABLE)
       rgblight_sethsv_noeeprom(0, 0, 255);
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING);
+      rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 0);
       #endif
     }
     return false;
@@ -21,7 +21,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
       set_single_persistent_default_layer(_GK);
       #if defined(RGBLIGHT_ENABLE)
       rgblight_sethsv_noeeprom(255, 255, 64);
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_KNIGHT);
+      rgblight_mode_noeeprom(RGBLIGHT_MODE_KNIGHT + 0);
       #endif
     }
     return false;
@@ -31,7 +31,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
       set_single_persistent_default_layer(gGK);
       #if defined(RGBLIGHT_ENABLE)
       rgblight_sethsv_noeeprom(64, 255, 64);
-      rgblight_mode_noeeprom(RGBLIGHT_MODE_KNIGHT);
+      rgblight_mode_noeeprom(RGBLIGHT_MODE_KNIGHT + 0);
       #endif
     }
     return false;

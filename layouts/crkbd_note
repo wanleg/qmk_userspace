@@ -1,0 +1,3 @@
+when flashing a corne (crkbd/rev1) with 6 columns per side, may need to move the split_3x5_3 directory to a different location temporarily (e.g. qmk_userspace/layouts/stash)
+
+it seems that for some reason, qmk defaults to the 3x5 version when not specified, and both split_3x folders exist in the same layouts directory

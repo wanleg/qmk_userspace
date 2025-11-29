@@ -13,6 +13,9 @@
 #define TAPPING_TERM 700
 #elif defined(KEYBOARD_georgi)
 #define TAPPING_TERM 200
+#elif defined(KEYBOARD_cheapino)
+#undef TAPPING_TERM
+#define TAPPING_TERM 145
 #else
 #define TAPPING_TERM 145
 #endif
@@ -52,3 +55,9 @@
 //#if defined(KEYBOARD_kbdfans_kbd6x)
 //#define RGBLIGHT_EFFECT_BREATHE_MAX 128  // 0-255
 //#endif
+
+//Define animations being used
+#if defined(RGBLIGHT_ENABLE)
+#define RGBLIGHT_EFFECT_BREATHING
+#define RGBLIGHT_MODE_KNIGHT
+#endif
