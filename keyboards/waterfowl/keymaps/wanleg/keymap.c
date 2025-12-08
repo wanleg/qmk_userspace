@@ -9,7 +9,7 @@
      K01,	K02,	K03,	K04,	K05,	K06,	K07,	K08,	K09,	K0A, \
      K11,	K12,	K13,	K14,	K15,	K16,	K17,	K18,	K19,	K1A, \
      K21,	K22,	K23,	K24,	K25,	K26,	K27,	K28,	K29,	K2A, \
-	KC_NO,	KC_LCTL, NUMBER, ETCETERA,	KC_MUTE, KC_NO,	KC_SPC, DIRECTION, KC_RGUI, KC_NO \
+	KC_NO,	KC_LCTL, NUMBER, ETCETERA,	KC_MUTE, KC_NO,	KC_SPC, LT(DIRECTION,KC_ENT), KC_RGUI, KC_NO \
   )
 #define LAYOUT_waterfowl_base_wrapper(...)       LAYOUT_waterfowl_base(__VA_ARGS__)
 
@@ -32,7 +32,7 @@ KC_LCTL, NUMBER, ETCETERA,	KC_SPC, DIRECTION, KC_RGUI
 [_GK] = LAYOUT_waterfowl_base_wrapper(
   _______________Gherkin_Row_0_______________, 
   _______________Gherkin_Row_1_______________, 
-  SFT_T(KC_Z), 	KC_X, 	KC_C, 	KC_V,	LT(ETC,KC_B),  KC_N, 	KC_M, 	KC_COMM,	ALT_T(KC_DOT),	CTL_T(KC_BSPC)  
+  SFT_T(KC_Z), 	KC_X, 	KC_C, 	KC_V,	KC_B,  KC_N, 	KC_M, 	KC_COMM,	ALT_T(KC_DOT),	CTL_T(KC_BSPC)  
 ),
 
 [NUM] = LAYOUT_wrapper(

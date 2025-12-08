@@ -13,7 +13,7 @@
      K11,	K12,	K13,	K14,	K15,	K16,						K17,	K18,	K19,	K1A,	K1B,	K1C, \
      K21,	K22,	K23,	K24,	K25,	K26,						K27,	K28,	K29,	K2A,	K2B,	K2C, \
      K31,	K32,	K33,	K34,	K35,	K36,						K37,	K38,	K39,	K3A,	K3B,	K3C, \
-                               KC_LCTL, NUMBER, ETCETERA,			LT(_FN,KC_SPC), DIRECTION, KC_RGUI                  \
+                               KC_LCTL, NUMBER, ETCETERA,			LT(_FN,KC_SPC), LT(DIRECTION,KC_ENT), KC_RGUI                  \
   )
 #define LAYOUT_iris_base_wrapper(...)       LAYOUT_iris_base(__VA_ARGS__)
 
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______________SUBTER_Row__1_______________,
     ______________ETCETERA_Row__0______________,
     ______________ETCETERA_Row__1______________,
-   _______, KC_LSFT, KC_CAPS, _______,_______, _______,  LALT(LCTL(KC_DEL)),	KC_WH_L, KC_WH_R, KC_LALT, KC_DEL, _______,
+   _______, KC_LSFT, KC_CAPS, _______,_______, _______,  LALT(LCTL(KC_DEL)),	MS_WHLL, MS_WHLR, KC_LALT, KC_DEL, _______,
 			_______, _______, _______,		LALT(LCTL(KC_DEL)), _______, _______
   )
   
