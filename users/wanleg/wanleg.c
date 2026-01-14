@@ -145,6 +145,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t * record) {
         //#if defined(RGBLIGHT_ENABLE)
         #if defined(RGB_MATRIX_ENABLE)
         rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
+        rgb_matrix_sethsv_noeeprom(HSV_OFF);
 	#endif
       } else {
         mouse_jiggle_mode = true;

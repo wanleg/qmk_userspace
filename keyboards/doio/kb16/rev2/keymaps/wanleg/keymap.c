@@ -1,4 +1,4 @@
-#include "wanleg.h" //needed for mouseJiggler keycode definition
+#include "wanleg.h" //needed for mouseJiggler keycode definition & combos
 
 // OLED animation
 #include "./lib/layer_status/layer_status.h"
@@ -18,66 +18,17 @@ enum layer_names {
   hexC,
 };
 
-// Combo section start
-// list combos
-enum combo_events {
-  ALPHA_MV,
-  // THUMB_SPACE,
-  // EM_EMAIL,
-  COMBO_LENGTH // this is a required line for the COMBO_COUNT delete
-};
-uint16_t COMBO_LEN = COMBO_LENGTH; // remove the COMBO_COUNT define in config.h and use this instead!
-// create keycombo name mappings
-const uint16_t PROGMEM alphaMV[] = { TO(_BASE), TO(_FN2), COMBO_END };
-// const uint16_t PROGMEM testing[] = {KC_BTN1, KC_BTN2, COMBO_END};
-// const uint16_t PROGMEM twoKeySpace[] = {LT(_FN,KC_N), LT(gDIR,KC_M), COMBO_END};
-// const uint16_t PROGMEM email_combo[] = {KC_G, KC_H, COMBO_END};
-
-combo_t key_combos[] = {
-  [ALPHA_MV] = COMBO_ACTION(alphaMV),
-  //[THUMB_SPACE] = COMBO_ACTION(twoKeySpace),
-  // COMBO(twoKeySpace, KC_SPC), //can define simple actions here
-  //[EM_EMAIL] = COMBO_ACTION(email_combo), //complex actions can be described below
-};
-/* COMBO_ACTION(x) is same as COMBO(x, KC_NO) */
-
-void process_combo_event(uint16_t combo_index, bool pressed) {
-  switch (combo_index) {
-    /*
-        case EM_EMAIL:
-          if (pressed) {
-            SEND_STRING("john.doe@example.com");
-          }
-          break;
-
-        case THUMB_SPACE:
-          if (pressed) {
-            tap_code16(KC_SPC);
-          }
-          break;
-    */
-    case ALPHA_MV:
-      if (pressed) {
-        // tap_code16(KC_SPC);
-        // tap_code16(TO(_FN1)); //doesn't work
-        // layer_move(_FN1);
-        layer_move(hexA);
-      }
-      break;
-  }
-}
-// Combo section end
 
 // mouse jiggle section start
 bool mouse_jiggle_mode = false; // first declared in wanleg.c
 void matrix_scan_user(void) {
   if (mouse_jiggle_mode) {
     // SEND_STRING(SS_DELAY(15)); //in milliseconds
-    tap_code(KC_MS_UP);
-    tap_code(KC_MS_DOWN);
+    tap_code(MS_UP);
+    tap_code(MS_DOWN);
     // SEND_STRING(SS_DELAY(15)); //in milliseconds
-    tap_code(KC_MS_LEFT);
-    tap_code(KC_MS_RIGHT);
+    tap_code(MS_LEFT);
+    tap_code(MS_RGHT);
   }
   else { // not sure if this else-statement is necessary...
   }
@@ -104,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_FN0] = LAYOUT(
     _______, _______, _______, _______, _______,
-    KC_BTN1, KC_BTN3, KC_BTN2, _______, _______,
+    MS_BTN1, MS_BTN3, MS_BTN2, _______, _______,
     _______, _______, _______, _______, _______,
     MOUSEJIGGLERMACRO, _______, KC_PWR, KC_KB_POWER),
 
@@ -116,9 +67,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    DASHER, _______, _______, _______),
 
   [_FN2] = LAYOUT(
-    _______, _______, _______, _______, RGB_MOD,
-    _______, _______, _______, _______, RGB_RMOD,
-    _______, _______, _______, _______, RGB_TOG,
+    _______, _______, _______, _______, RM_NEXT,
+    _______, _______, _______, _______, RM_PREV,
+    _______, _______, _______, _______, RM_TOGG,
     _______, _______, _______, QK_BOOT),
   [hexA] = LAYOUT(
     TO(_BASE), _______, _______, _______, _______,
@@ -182,10 +133,10 @@ bool oled_task_user(void) {
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-  [_BASE] = { ENCODER_CCW_CW(KC_WH_L, KC_WH_R), ENCODER_CCW_CW(KC_WH_D, KC_WH_U), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-  [_FN0] = { ENCODER_CCW_CW(KC_MS_L, KC_MS_R), ENCODER_CCW_CW(KC_MS_D, KC_MS_U), ENCODER_CCW_CW(_______, _______) },
+  [_BASE] = { ENCODER_CCW_CW(MS_WHLL, MS_WHLR), ENCODER_CCW_CW(MS_WHLD, MS_WHLU), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+  [_FN0] = { ENCODER_CCW_CW(MS_LEFT, MS_RGHT), ENCODER_CCW_CW(MS_DOWN, MS_UP), ENCODER_CCW_CW(_______, _______) },
   [_FN1] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______) },
-  [_FN2] = { ENCODER_CCW_CW(RGB_HUD, RGB_HUI), ENCODER_CCW_CW(RGB_SAD, RGB_SAI), ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
+  [_FN2] = { ENCODER_CCW_CW(RM_HUED, RM_HUEU), ENCODER_CCW_CW(RM_SATD, RM_SATU), ENCODER_CCW_CW(RM_VALD, RM_VALU) },
   [hexA] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(TO(hexC), TO(hexB))},
   [hexB] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(TO(hexA), TO(hexC))},
   [hexC] = { ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(_______, _______), ENCODER_CCW_CW(TO(hexB), TO(hexA))},
